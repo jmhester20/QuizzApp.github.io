@@ -1,0 +1,286 @@
+/* Virginia Tech Themed Styles */
+:root {
+  --vt-maroon: #660000;
+  --vt-orange: #FF6600;
+  --vt-maroon-dark: #330000;
+  --vt-orange-light: #FFE5CC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--vt-maroon);
+}
+
+.popup-container {
+  position: fixed;
+  inset: 0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.popup-container.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-container .quiz-box {
+  width: 600px;    
+  max-width: 90vw;
+}
+.popup-container.active .quiz-box {
+  transform: translateY(0);
+}
+
+/* Configuration */
+.config-container {
+  width: 480px;
+  padding: 2px 25px 25px;
+  text-align: center;
+}
+.config-title {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+
+
+.start-quiz-btn {
+  margin-top: 40px;           
+  padding: 16px 35px;        
+  font-size: 1.125rem;       
+  border-width: 3px;      
+  border-radius: 8px;       
+}
+.start-quiz-btn:hover {
+  background: var(--vt-orange);
+  color: #fff;
+}
+
+.config-option + .config-option {
+  margin-top: 25px;
+}
+
+.timer-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.option-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+.category-options {
+  display: flex;            
+  flex-direction: column;    
+  gap: 15px;  
+}
+.question-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.config-option button {
+  padding: 12px;
+  font-size: 0.938rem;
+  font-weight: 500;
+  background: #fff;
+  color: var(--vt-maroon-dark);
+  border: 2px solid var(--vt-orange);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.config-option button.active {
+  background: var(--vt-orange-light);
+  border-color: var(--vt-orange);
+  color: var(--vt-maroon);
+}
+.config-option button:hover {
+  background: var(--vt-orange-light);
+}
+
+
+.next-question-btn {
+  background: var(--vt-maroon);
+  color: #fff;
+  border: none;
+  padding: 13px 25px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.try-again-btn {
+  background: var(--vt-maroon);
+  color: #fff;
+  border: none;
+  padding: 13px 25px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 30px;
+}
+.start-quiz-btn:hover,
+.next-question-btn:hover,
+.try-again-btn:hover {
+  background: var(--vt-orange);
+}
+
+/* Quiz */
+.quiz-container {
+  width: 600px;        
+  max-width: 90vw; 
+}
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 25px;
+  background: var(--vt-maroon);
+  border-radius: 8px 8px 0 0;
+}
+.quiz-title {
+  font-size: 1.43rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.quiz-timer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;                      
+  color: var(--vt-maroon);               
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.quiz-content {
+  background: #fff;
+  padding: 20px 25px 25px;
+}
+.question-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--vt-maroon);
+}
+.answer-options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.answer-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  border: 2px solid var(--vt-orange);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.answer-option:hover {
+  background: var(--vt-orange-light);
+}
+.answer-option.correct {
+  border-color: #B7E1C1;
+  background: #D4EDDA;
+}
+.answer-option.incorrect {
+  border-color: #F4BEC3;
+  background: #F8D7DA;
+}
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: var(--vt-orange-light);
+  border-top: 2px solid var(--vt-orange);
+}
+.question-status {
+  font-weight: 500;
+  color: var(--vt-maroon-dark);
+}
+
+/* Result */
+.result-container {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+.result-img {
+  width: 110px;
+}
+.result-title {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--vt-maroon);
+}
+.result-message {
+  margin-top: 15px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--vt-maroon-dark);
+}
+.result-message b {
+  color: var(--vt-maroon);
+}
+
+/* Responsive */
+@media(max-width:624px) {
+  .config-container,
+  .quiz-content {
+    padding: 20px;
+  }
+  .answer-option {
+    padding: 12px 14px;
+  }
+  .quiz-header,
+  .quiz-footer {
+    padding: 13px 20px;
+  }
+  .quiz-title,
+  .question-text {
+    font-size: 1.3rem;
+  }
+}
+
+.quiz-header .quiz-timer {
+  background: #fff !important;            
+  color: var(--vt-maroon) !important;     
+  border: 2px solid var(--vt-orange) !important; 
+}
+
+/* Also make sure the icon inside is maroon */
+.quiz-header .quiz-timer .material-symbols-rounded,
+.quiz-header .quiz-timer .timer-icon {
+  color: var(--vt-maroon) !important;
+}

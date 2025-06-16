@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Quiz Configuration Popup -->
+    <div class="config-popup popup-container active">
+      <div class="config-container quiz-box">
+        <h2 class="config-title">Virginia Tech Quiz</h2>
+
+        <div class="config-option">
+          <h4 class="option-title">Choose Category</h4>
+          <div class="category-options">
+            <button class="category-option active">VT History</button>
+            <button class="category-option">VT Football</button>
+            <button class="category-option">VT Basketball</button>
+            <button class="category-option">VT Traditions</button>
+          </div>
+        </div>
+
+        <div class="config-option">
+          <h4 class="option-title">No. of Questions</h4>
+          <div class="question-options">
+            <button class="question-option">5</button>
+            <button class="question-option active">10</button>
+            <button class="question-option">15</button>
+            <button class="question-option">20</button>
+          </div>
+        </div>
+
+        <button class="start-quiz-btn">Start Quiz</button>
+      </div>
+    </div>
+
+    <!--Popup -->
+    <div class="quiz-popup popup-container">
+      <div class="quiz-container quiz-box">
+        <header class="quiz-header">
+          <h2 class="quiz-title">VT Quiz (Please Dont Rush) </h2>
+          <div class="quiz-timer">
+            <img src="images/timer.png" alt="Timer Icon" class="timer-icon" />
+            <p class="timer-duration"></p>
+          </div>
+
+        </header>
+
+        <div class="quiz-content">
+          <h1 class="question-text"></h1>
+          <ul class="answer-options"></ul>
+        </div>
+
+        <div class="quiz-footer">
+          <p class="question-status"></p>
+          <button class="next-question-btn">
+            Next
+            <span class="material-symbols-rounded">arrow_right_alt</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Popup -->
+    <div class="result-popup popup-container">
+      <div class="result-container quiz-box">
+        <img src="images/HokieBird3.png" class="result-img" alt="Hokie Bird" />
+        <h2 class="result-title">Virginia Tech Quiz Finished!</h2>
+        <p class="result-message"></p>
+        <button class="try-again-btn">Retry</button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="javascript/questions.js"></script>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
